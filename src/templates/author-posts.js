@@ -1,26 +1,25 @@
-import { graphql, } from "gatsby"
+import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/Layout"
-import "../styles/globals.css"
 import AllCards from "../components/AllCards"
 
-export default function Home({ data }) {
-  const blogs = data.allMarkdownRemark.nodes;
+function AuthorPosts({ data }) {
+  const blogs = data.allMarkdownRemark.nodes
   return (
-    <div>
-      <Layout>
-        <AllCards blogs={blogs} />
-      </Layout>
-    </div>
+    <Layout>
+      <AllCards blogs={blogs} />
+    </Layout>
   )
 }
 
+export default AuthorPosts
+
 export const query = graphql`
-  query BlogsData {
-    allMarkdownRemark {
+  query AuthorPosts($author: String!) {
+    allMarkdownRemark(filter: { frontmatter: { author: { eq: $author } } }) {
       nodes {
+        timeToRead
         id
-        html
         frontmatter {
           title
           subtitle
@@ -29,11 +28,10 @@ export const query = graphql`
           slug
           image {
             childImageSharp {
-              gatsbyImageData(width: 350)
+              gatsbyImageData
             }
           }
         }
-        timeToRead
       }
     }
   }

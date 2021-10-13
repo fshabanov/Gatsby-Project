@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #15171a;
+  color: rgba(255, 255, 255, 0.7);
+  height: 80px;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.right {
+  display: flex;
+  margin-left: 10px;
+}
+
+.right p {
+  margin: 0 5px;
+}
+
+.container a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease-in-out;
+}
+
+.container a:hover {
+  color: white;
+}

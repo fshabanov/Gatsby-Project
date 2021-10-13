@@ -1,0 +1,34 @@
+.title {
+  color: #333;
+}
+
+.subtitle {
+  color: #3c484e;
+  margin: 20px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author > p {
+  margin-left: 5px;
+}
+
+.category {
+  color: #5b7a81;
+  padding: 10px 0;
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+}

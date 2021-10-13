@@ -1,11 +1,10 @@
-import { graphql, } from "gatsby"
+import { graphql } from "gatsby"
 import React from "react"
-import Layout from "../components/Layout"
-import "../styles/globals.css"
-import AllCards from "../components/AllCards"
+import AllCards from "../../components/AllCards"
+import Layout from "../../components/Layout"
 
-export default function Home({ data }) {
-  const blogs = data.allMarkdownRemark.nodes;
+function Blog({ data }) {
+  const blogs = data.allMarkdownRemark.nodes
   return (
     <div>
       <Layout>
@@ -15,8 +14,10 @@ export default function Home({ data }) {
   )
 }
 
+export default Blog
+
 export const query = graphql`
-  query BlogsData {
+  query BlogData {
     allMarkdownRemark {
       nodes {
         id
